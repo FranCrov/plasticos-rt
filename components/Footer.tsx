@@ -1,7 +1,17 @@
 import Link from "next/link";
-import { contactInfo, navItems, siteConfig } from "@/lib/site";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
+import type { NavItem } from "@/lib/site";
+import { contactInfo } from "@/lib/site";
 
-export default function Footer() {
+export default function Footer({
+  brand,
+  footer,
+  navItems,
+}: {
+  brand: string;
+  footer: Dictionary["footer"];
+  navItems: NavItem[];
+}) {
   const year = new Date().getFullYear();
 
   return (
@@ -15,17 +25,17 @@ export default function Footer() {
                 className="h-7 w-1.5 rounded-full bg-gradient-to-b from-brand-300 via-brand-400 to-brand-600"
               />
               <span className="text-base font-bold tracking-tight text-neutral-900">
-                {siteConfig.name}
+                {brand}
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-6 text-neutral-500">
-              {siteConfig.description}
+              {footer.description}
             </p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold text-neutral-900">
-              Secciones
+              {footer.sections}
             </h3>
             <nav className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
               {navItems.map((item) => (
@@ -41,7 +51,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-neutral-900">Contacto</h3>
+            <h3 className="text-sm font-semibold text-neutral-900">
+              {footer.contact}
+            </h3>
             <ul className="mt-4 space-y-2 text-sm text-neutral-500">
               <li>{contactInfo.email}</li>
               <li>{contactInfo.phone}</li>
@@ -53,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-neutral-200 pt-6 text-center text-sm text-neutral-500">
-          © {year} {siteConfig.name}. Todos los derechos reservados.
+          © {year} {brand}. {footer.rights}
         </div>
       </div>
     </footer>

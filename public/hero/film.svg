@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#262a2f"/>
+      <stop offset="1" stop-color="#17181b"/>
+    </linearGradient>
+    <linearGradient id="cyl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1c1f23"/>
+      <stop offset="0.5" stop-color="#3a4046"/>
+      <stop offset="1" stop-color="#1c1f23"/>
+    </linearGradient>
+    <linearGradient id="film" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#ffb91d" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e6452b" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="800" cy="790" rx="640" ry="70" fill="#000" opacity="0.4"/>
+
+  <g>
+    <rect x="250" y="320" width="480" height="360" rx="12" fill="url(#cyl)"/>
+    <ellipse cx="490" cy="320" rx="240" ry="62" fill="#ccd3d9"/>
+    <ellipse cx="490" cy="320" rx="240" ry="62" fill="none" stroke="#9aa3ab" stroke-width="3"/>
+    <ellipse cx="490" cy="320" rx="170" ry="44" fill="none" stroke="#c3cad1" stroke-width="8"/>
+  </g>
+
+  <path d="M870 400 L1340 470 L1240 760 L790 680 Z" fill="url(#film)"/>
+  <path d="M870 400 L1340 470" stroke="#ffb91d" stroke-width="4" opacity="0.7"/>
+  <path d="M820 490 L1290 560" stroke="#f8f9fa" stroke-width="6" opacity="0.25"/>
+  <path d="M800 590 L1270 660" stroke="#f8f9fa" stroke-width="6" opacity="0.18"/>
+
+  <g>
+    <rect x="1080" y="560" width="260" height="200" rx="10" fill="url(#cyl)"/>
+    <ellipse cx="1210" cy="560" rx="130" ry="34" fill="#dfe3e6"/>
+    <ellipse cx="1210" cy="560" rx="130" ry="34" fill="none" stroke="#aab2b9" stroke-width="3"/>
+    <ellipse cx="1210" cy="560" rx="92" ry="24" fill="none" stroke="#d0d6db" stroke-width="6"/>
+  </g>
+</svg>

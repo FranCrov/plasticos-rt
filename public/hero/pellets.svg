@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#262a2f"/>
+      <stop offset="1" stop-color="#17181b"/>
+    </linearGradient>
+    <pattern id="pellets" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="16" fill="#f5821f"/>
+      <circle cx="60" cy="60" r="16" fill="#ffb91d"/>
+      <circle cx="60" cy="20" r="16" fill="#cc1f2e"/>
+      <circle cx="20" cy="60" r="16" fill="#e6452b"/>
+      <circle cx="40" cy="40" r="16" fill="#7d1423"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="800" cy="810" rx="640" ry="70" fill="#000" opacity="0.4"/>
+  <path d="M230 810 C230 530 420 440 620 440 C700 390 860 370 990 390 C1190 360 1370 430 1430 570 C1485 655 1480 750 1430 810 Z" fill="url(#pellets)"/>
+  <circle cx="380" cy="372" r="26" fill="#ffb91d" opacity="0.9"/>
+  <circle cx="575" cy="340" r="30" fill="#f5821f" opacity="0.85"/>
+  <circle cx="760" cy="325" r="24" fill="#e6452b" opacity="0.9"/>
+  <circle cx="940" cy="340" r="28" fill="#cc1f2e" opacity="0.85"/>
+  <circle cx="560" cy="430" r="18" fill="#7d1423" opacity="0.8"/>
+</svg>
