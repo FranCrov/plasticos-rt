@@ -6,6 +6,7 @@ import type { LayoutLangProps } from "@/lib/i18n/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/lib/site";
 import "../globals.css";
 
@@ -71,9 +72,11 @@ export default async function RootLayout({
         <Footer
           brand={siteConfig.name}
           footer={dict.footer}
+          departmentLabels={dict.departments}
           navItems={navItems}
         />
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );

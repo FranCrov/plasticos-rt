@@ -46,7 +46,15 @@ const en = {
       "Plasticos RT supplies plastic raw materials, plastic fabrics, films and caps to industry and trade across the country and abroad.",
     sections: "Sections",
     contact: "Contact",
+    departments: "Departments",
     rights: "All rights reserved.",
+  },
+  departments: {
+    sales: "Sales",
+    administration: "Administration",
+    technical: "Technical service",
+    purchasing: "Purchasing",
+    logistics: "Logistics",
   },
   home: {
     explore: "Explore",
@@ -347,10 +355,15 @@ const en = {
       email: "Email",
       phone: "Phone",
       location: "Location",
+      hours: {
+        title: "Business hours",
+        weekdays: "Monday to Thursday, 8 AM - 5 PM",
+        friday: "Friday, 8 AM - 4 PM",
+      },
     },
     map: {
       title: "Location map",
-      note: "Reserved space to embed Google Maps.",
+      directions: "Get directions",
     },
   },
   notFound: {
@@ -408,7 +421,15 @@ const es: Dictionary = {
       "Plasticos RT provee materia prima plástica, telas plásticas, películas y tapas a la industria y el comercio en todo el país y el exterior.",
     sections: "Secciones",
     contact: "Contacto",
+    departments: "Departamentos",
     rights: "Todos los derechos reservados.",
+  },
+  departments: {
+    sales: "Ventas",
+    administration: "Administración",
+    technical: "Servicio técnico",
+    purchasing: "Compras",
+    logistics: "Logística",
   },
   home: {
     explore: "Explorar",
@@ -709,10 +730,15 @@ const es: Dictionary = {
       email: "Email",
       phone: "Teléfono",
       location: "Ubicación",
+      hours: {
+        title: "Horarios",
+        weekdays: "Lunes a Jueves, 8 a 17 hs",
+        friday: "Viernes, 8 a 16 hs",
+      },
     },
     map: {
       title: "Mapa de ubicación",
-      note: "Espacio reservado para integrar Google Maps.",
+      directions: "Cómo llegar",
     },
   },
   notFound: {

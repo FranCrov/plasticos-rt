@@ -1,15 +1,17 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { NavItem } from "@/lib/site";
-import { contactInfo } from "@/lib/site";
+import { contactInfo, departments, telHref } from "@/lib/site";
 
 export default function Footer({
   brand,
   footer,
+  departmentLabels,
   navItems,
 }: {
   brand: string;
   footer: Dictionary["footer"];
+  departmentLabels: Dictionary["departments"];
   navItems: NavItem[];
 }) {
   const year = new Date().getFullYear();
@@ -55,12 +57,70 @@ export default function Footer({
               {footer.contact}
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-neutral-500">
-              <li>{contactInfo.email}</li>
-              <li>{contactInfo.phone}</li>
+              <li>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="transition-colors hover:text-brand-600"
+                >
+                  {contactInfo.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={telHref(contactInfo.phone)}
+                  className="transition-colors hover:text-brand-600"
+                >
+                  {contactInfo.phone}
+                </a>
+              </li>
               <li>
                 {contactInfo.address}, {contactInfo.city}
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-neutral-200 pt-8">
+          <h3 className="text-sm font-semibold text-neutral-900">
+            {footer.departments}
+          </h3>
+          <div className="mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {departments.map((department) => (
+              <div key={department.id}>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
+                  {departmentLabels[
+                    department.id as keyof typeof departmentLabels
+                  ]}
+                </h4>
+                <ul className="mt-2 space-y-1.5 text-sm text-neutral-500">
+                  {department.emails.map((email) => (
+                    <li key={email}>
+                      <a
+                        href={`mailto:${email}`}
+                        className="transition-colors hover:text-brand-600"
+                      >
+                        {email}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                {department.contacts && (
+                  <ul className="mt-2 space-y-1 text-xs text-neutral-400">
+                    {department.contacts.map((person) => (
+                      <li key={person.name}>
+                        {person.name} ·{" "}
+                        <a
+                          href={telHref(person.phone)}
+                          className="transition-colors hover:text-brand-600"
+                        >
+                          {person.phone}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 

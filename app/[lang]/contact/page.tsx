@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import type { PageLangProps } from "@/lib/i18n/types";
-import { contactInfo } from "@/lib/site";
+import { contactInfo, telHref } from "@/lib/site";
+import LocationMap from "@/components/LocationMap";
 import PageHeader from "@/components/PageHeader";
 
 export async function generateMetadata({
@@ -30,6 +31,14 @@ export default async function ContactPage({ params }: PageLangProps) {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
+          <div className="animate-fade-in-up lg:col-span-2">
+            <LocationMap
+              lang={lang}
+              title={contact.map.title}
+              directionsLabel={contact.map.directions}
+            />
+          </div>
+
           <div className="animate-fade-in-up">
             <form className="rounded-2xl border border-neutral-200 bg-white p-8">
               {contact.form.fields.map((field) => (
@@ -71,42 +80,55 @@ export default async function ContactPage({ params }: PageLangProps) {
             </form>
           </div>
 
-          <div className="animate-fade-in-up flex flex-col gap-6 [animation-delay:150ms]">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-8">
-              <h2 className="text-lg font-semibold text-neutral-900">
-                {contact.info.title}
-              </h2>
-              <dl className="mt-5 space-y-4 text-sm">
-                <div>
-                  <dt className="font-medium text-neutral-500">
-                    {contact.info.email}
-                  </dt>
-                  <dd className="mt-0.5 text-neutral-900">{contactInfo.email}</dd>
-                </div>
-                <div>
-                  <dt className="font-medium text-neutral-500">
-                    {contact.info.phone}
-                  </dt>
-                  <dd className="mt-0.5 text-neutral-900">{contactInfo.phone}</dd>
-                </div>
-                <div>
-                  <dt className="font-medium text-neutral-500">
-                    {contact.info.location}
-                  </dt>
-                  <dd className="mt-0.5 text-neutral-900">
-                    {contactInfo.address}, {contactInfo.city}
-                  </dd>
-                </div>
-              </dl>
-            </div>
-
-            <div className="flex flex-1 items-center justify-center rounded-2xl border border-dashed border-neutral-300 bg-white">
-              <p className="px-6 text-center text-sm text-neutral-400">
-                {contact.map.title}
-                <br />
-                <span className="text-xs">{contact.map.note}</span>
-              </p>
-            </div>
+          <div className="animate-fade-in-up h-fit rounded-2xl border border-neutral-200 bg-white p-8 [animation-delay:150ms]">
+            <h2 className="text-lg font-semibold text-neutral-900">
+              {contact.info.title}
+            </h2>
+            <dl className="mt-5 space-y-4 text-sm">
+              <div>
+                <dt className="font-medium text-neutral-500">
+                  {contact.info.email}
+                </dt>
+                <dd className="mt-0.5 text-neutral-900">
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="transition-colors hover:text-brand-600"
+                  >
+                    {contactInfo.email}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-neutral-500">
+                  {contact.info.phone}
+                </dt>
+                <dd className="mt-0.5 text-neutral-900">
+                  <a
+                    href={telHref(contactInfo.phone)}
+                    className="transition-colors hover:text-brand-600"
+                  >
+                    {contactInfo.phone}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-neutral-500">
+                  {contact.info.location}
+                </dt>
+                <dd className="mt-0.5 text-neutral-900">
+                  {contactInfo.address}, {contactInfo.city}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-neutral-500">
+                  {contact.info.hours.title}
+                </dt>
+                <dd className="mt-0.5 text-neutral-900">
+                  <p>{contact.info.hours.weekdays}</p>
+                  <p>{contact.info.hours.friday}</p>
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
