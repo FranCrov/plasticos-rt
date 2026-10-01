@@ -11,7 +11,7 @@ const en = {
   },
   meta: {
     home: {
-      title: "Plastic raw materials, fabrics, films and caps",
+      title: "Plasticos RT",
       description:
         "Plasticos RT distributes polymer raw materials, plastic fabrics, films and caps nationwide and internationally.",
     },
@@ -124,26 +124,62 @@ const en = {
         ],
       },
     },
-    features: [
-      {
-        href: "/materials",
-        title: "Materials catalog",
-        description:
-          "Polymers, fabrics, films and caps with technical parameters for each grade.",
-      },
-      {
-        href: "/products",
-        title: "Applications",
-        description:
-          "Final products for packaging, construction, agriculture and industry.",
-      },
-      {
-        href: "/information",
-        title: "Technical information",
-        description:
-          "Process data, logistics and quality certifications behind every shipment.",
-      },
-    ],
+    materialsHighlight: {
+      eyebrow: "Our materials",
+      title: "Materials grouped by thermal performance",
+      description:
+        "From standard polymers to advanced engineering grades, organized by service temperature so you can find the right material quickly.",
+      cta: "View full catalog",
+      rangeLabel: "Thermal resistance",
+    },
+    experience: {
+      eyebrow: "Experience",
+      title: "Over 15 years supporting the plastics industry",
+      stats: [
+        { value: "15+", label: "Years of experience" },
+        { value: "Argentina + abroad", label: "Commercial coverage" },
+        { value: "Personalized service", label: "Advice and support" },
+      ],
+    },
+    brandsSection: {
+      eyebrow: "Suppliers",
+      title: "We work with leading brands",
+      description:
+        "We distribute recognized product lines with full traceability and technical support from the manufacturer.",
+    },
+    technicalInfo: {
+      eyebrow: "Technical information",
+      title: "Technical support for every material",
+      items: [
+        {
+          title: "Technical support",
+          description:
+            "A dedicated sheet for each material with properties and specifications.",
+          href: "/information",
+        },
+        {
+          title: "Process parameters",
+          description:
+            "Recommended temperatures and processing conditions by grade.",
+          href: "/materials",
+        },
+        {
+          title: "Advisory",
+          description:
+            "Help to find the right material for your process and product.",
+          href: "/contact",
+        },
+      ],
+    },
+    representative: {
+      eyebrow: "Our team",
+      title: "Talk to the people behind Plasticos RT",
+      description:
+        "At Plasticos RT every inquiry is handled by a person, not an automated form. Write to us and we reply with availability, pricing and the technical support your process needs.",
+      cta: "Contact us",
+      image: "/team/dg.png",
+      imageAlt: "General Management of Plasticos RT",
+    },
   },
   about: {
     eyebrow: "About us",
@@ -156,7 +192,7 @@ const en = {
     paragraph2:
       "Our supply network lets us respond quickly to demands of any scale, keeping strategic stock and stable prices.",
     stats: [
-      { value: "20+", label: "Years of experience" },
+      { value: "15+", label: "Years of experience" },
       { value: "350+", label: "Active customers" },
       { value: "15k", label: "Tons per year" },
       { value: "24/7", label: "Customer service" },
@@ -194,6 +230,15 @@ const en = {
     title: "Raw materials",
     description:
       "A complete catalog of polymers and resins selected for quality and consistency, lot after lot.",
+    groups: {
+      categories: {
+        amorphous: "Amorphous",
+        semicrystalline: "Semicrystalline",
+      },
+      thermalRange: "Thermal resistance",
+      gradesNote: "Brands and grades available on request.",
+      requestGrade: "Request a grade",
+    },
     items: [
       {
         name: "Polyethylene (PE)",
@@ -386,7 +431,7 @@ const es: Dictionary = {
   },
   meta: {
     home: {
-      title: "Materia prima plástica, telas, películas y tapas",
+      title: "Plasticos RT",
       description:
         "Plasticos RT distribuye materia prima plástica, telas plásticas, películas y tapas en todo el país y a nivel internacional.",
     },
@@ -499,26 +544,62 @@ const es: Dictionary = {
         ],
       },
     },
-    features: [
-      {
-        href: "/materials",
-        title: "Catálogo de materiales",
-        description:
-          "Polímeros, telas, películas y tapas con parámetros técnicos para cada grado.",
-      },
-      {
-        href: "/products",
-        title: "Aplicaciones",
-        description:
-          "Productos finales para envase, construcción, agricultura e industria.",
-      },
-      {
-        href: "/information",
-        title: "Información técnica",
-        description:
-          "Datos de proceso, logística y certificaciones de calidad detrás de cada despacho.",
-      },
-    ],
+    materialsHighlight: {
+      eyebrow: "Nuestros materiales",
+      title: "Materiales agrupados por resistencia térmica",
+      description:
+        "Desde polímeros estándar hasta grados de ingeniería avanzados, organizados por temperatura de servicio para que encuentres el material adecuado rápidamente.",
+      cta: "Ver catálogo completo",
+      rangeLabel: "Resistencia térmica",
+    },
+    experience: {
+      eyebrow: "Experiencia",
+      title: "Más de 15 años acompañando a la industria del plástico",
+      stats: [
+        { value: "15+", label: "Años de experiencia" },
+        { value: "Argentina + exterior", label: "Cobertura comercial" },
+        { value: "Atención personalizada", label: "Asesoramiento y soporte" },
+      ],
+    },
+    brandsSection: {
+      eyebrow: "Proveedores",
+      title: "Trabajamos con marcas de referencia",
+      description:
+        "Distribuimos líneas de productos reconocidas con trazabilidad total y soporte técnico del fabricante.",
+    },
+    technicalInfo: {
+      eyebrow: "Información técnica",
+      title: "Soporte técnico para cada material",
+      items: [
+        {
+          title: "Soporte técnico",
+          description:
+            "Ficha técnica dedicada de cada material con propiedades y especificaciones.",
+          href: "/information",
+        },
+        {
+          title: "Parámetros de proceso",
+          description:
+            "Temperaturas y condiciones recomendadas de proceso por grado.",
+          href: "/materials",
+        },
+        {
+          title: "Asesoramiento",
+          description:
+            "Ayuda para encontrar el material adecuado para su proceso y producto.",
+          href: "/contact",
+        },
+      ],
+    },
+    representative: {
+      eyebrow: "Nuestro equipo",
+      title: "Hablá con quienes están detrás de Plasticos RT",
+      description:
+        "En Plasticos RT cada consulta la atiende una persona, no un formulario automático. Escribinos y te respondemos con disponibilidad, precios y el acompañamiento técnico que tu proceso necesita.",
+      cta: "Contactanos",
+      image: "/team/dg.png",
+      imageAlt: "Dirección General de Plasticos RT",
+    },
   },
   about: {
     eyebrow: "Nosotros",
@@ -531,7 +612,7 @@ const es: Dictionary = {
     paragraph2:
       "Nuestra red de abastecimiento nos permite responder con rapidez a demandas de cualquier escala, manteniendo stock estratégico y precios estables.",
     stats: [
-      { value: "20+", label: "Años de experiencia" },
+      { value: "15+", label: "Años de experiencia" },
       { value: "350+", label: "Clientes activos" },
       { value: "15k", label: "Toneladas al año" },
       { value: "24/7", label: "Atención al cliente" },
@@ -569,6 +650,15 @@ const es: Dictionary = {
     title: "Materias primas",
     description:
       "Un catálogo completo de polímeros y resinas seleccionados por calidad y consistencia lote a lote.",
+    groups: {
+      categories: {
+        amorphous: "Amorfos",
+        semicrystalline: "Semicristalinos",
+      },
+      thermalRange: "Resistencia térmica",
+      gradesNote: "Marcas y grados disponibles a consultar.",
+      requestGrade: "Consultar grado",
+    },
     items: [
       {
         name: "Polietileno (PE)",
